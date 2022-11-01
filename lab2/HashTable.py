@@ -36,3 +36,10 @@ class HashTable:
                 if pos[0] == key:
                     return pos[1]
         return None
+
+    def __str__(self):
+        stringOut = ""
+        for pos in self.array:
+            if pos is not None:
+                stringOut = stringOut + str(pos)[1:-1]
+        return stringOut

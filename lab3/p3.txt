@@ -1,0 +1,9 @@
+n << 5
+l << [ 54, 66, 23, 32, 5 ]
+s << 0
+i << 0
+given than i < n ...
+	s +< l(i)
+	i +< 1
+... repeat
+print(s)

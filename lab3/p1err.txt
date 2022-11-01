@@ -1,0 +1,9 @@
+n << 10
+d << 1
+.c << 0
+from d to n, step 1 ...
+	given that n / d = 0 ...
+		c +< 1
+	... end
+.. end
+print(c)

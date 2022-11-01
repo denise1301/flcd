@@ -14,3 +14,6 @@ class SymbolTable:
 
     def getValueForIdentifier(self, identifier):
         return self.__table[identifier]
+
+    def __str__(self):
+        return self.__table.__str__()

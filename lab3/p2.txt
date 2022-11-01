@@ -1,0 +1,9 @@
+n << 128036276
+max << 0
+given that n > 0 ...
+	given that n % 10 > max ...
+		max << n % 10
+	... end
+	n /< 10
+... repeat
+print(max)
