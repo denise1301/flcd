@@ -15,7 +15,8 @@ class ScannerResult:
         reserved_words = self.scanner.get_reserved_words()
         separators = self.scanner.get_separators()
         operators = self.scanner.get_operators()
-
+        all = self.scanner.getAll()
+        counterST = 0
         with open(file_name, 'r') as file:
             line_counter = 0
             for line in file:
@@ -27,16 +28,25 @@ class ScannerResult:
                     if tokens[i] in reserved_words + separators + operators:
                         if tokens[i] == ' ':  # ignore adding spaces to the pif
                             continue
-                        self.PIF.add(tokens[i], "(Line: " + str(line_counter) + "; Column: " + str(position + 1) + ")")
+                        self.PIF.add(tokens[i], all.index(tokens[i]) + 2)
 
                     elif self.scanner.is_identifier(tokens[i]):
-                        self.ST.add(tokens[i], 1)
-                        self.PIF.add(tokens[i], "(Line: " + str(line_counter) + "; Column: " + str(position + 1) + ")")
+                        id = self.ST.add(tokens[i])
+                        counterST += 1
+                        aux = list(id)
+                        aux[0] = counterST
+                        id = tuple(aux)
+                        self.PIF.add(tokens[i], id)
+
                     elif self.scanner.is_constant(tokens[i]):
-                        self.ST.add(extra + tokens[i], 1)
+                        const = self.ST.add(extra + tokens[i])
+                        counterST += 1
                         extra = ''
-                        self.PIF.add(extra + tokens[i],
-                                     "(Line: " + str(line_counter) + "; Column: " + str(position + 1) + ")")
+                        aux = list(const)
+                        aux[0] = counterST
+                        aux[1] = 1
+                        const = tuple(aux)
+                        self.PIF.add(tokens[i], const)
                     else:
                         exceptionMessage += 'Lexical error at token ' + tokens[i] + ', at line ' + str(
                             line_counter) + " column: " + str(position + 1) + "\n"

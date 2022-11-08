@@ -22,7 +22,8 @@ space
 >=
 =
 newline
-givenThat
+given
+that
 from
 to
 step

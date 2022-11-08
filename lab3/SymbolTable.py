@@ -6,14 +6,14 @@ class SymbolTable:
         self.__size = size
         self.__table = HashTable(size)
 
-    def add(self, identifier, value):
-        return self.__table.add(identifier, value)
+    def add(self, identifier):
+        return self.__table.add(identifier)
 
-    def delete(self, identifier):
-        return self.__table.delete(identifier)
+    def contains(self, key):
+        return self.__table.get(key)
 
-    def getValueForIdentifier(self, identifier):
-        return self.__table[identifier]
+    def delete(self, key):
+        return self.__table.delete(key)
 
     def __str__(self):
-        return self.__table.__str__()
+        return "Symbol Table:\n" + str(self.__table)

@@ -79,3 +79,6 @@ class Scanner:
         if token:
             tokens.append(token)
         return tokens
+
+    def getAll(self):
+        return self.symbol_classifier.all
