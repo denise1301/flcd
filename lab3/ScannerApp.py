@@ -65,6 +65,6 @@ class ScannerResult:
 if __name__ == '__main__':
     scanner_result = ScannerResult()
     scanner_result.compute_results("lab3/p1.txt")
-    scanner_result.compute_results("lab3/p1err.txt")
-    scanner_result.compute_results("lab3/p2.txt")
-    scanner_result.compute_results("lab3/p3.txt")
+    # scanner_result.compute_results("lab3/p1err.txt")
+    # scanner_result.compute_results("lab3/p2.txt")
+    # scanner_result.compute_results("lab3/p3.txt")
