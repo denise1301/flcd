@@ -13,3 +13,21 @@ class FiniteAutomata:
                "Initial State = { " + self.q0 + " }\n" \
                "Transitions = { " + str(self.delta) + " }\n" \
                "Final States = { " + ', '.join(self.F) + " }\n"
+
+    def isDFA(self):
+        for elem in self.delta.keys():
+            if len(self.delta[elem]) > 1:
+                return False
+        return True
+
+    def isAccepted(self, sequence):
+        print(sequence)
+        if self.isDFA():
+            current = self.q0
+            for symbol in sequence:
+                if (current, symbol) in self.delta.keys():
+                    current = self.delta[(current, symbol)][0]
+                else:
+                    return False
+            return current in self.F
+        return False

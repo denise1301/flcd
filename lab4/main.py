@@ -25,13 +25,14 @@ def read(file_name):
 
 
 def displayMenu():
+    print("1. Show States")
+    print("2. Show Alphabet")
+    print("3. Show Transitions")
+    print("4. Show Initial State")
+    print("5. Show Final States")
+    print("6. Check if DFA")
+    print("7. Check if sequence is accepted")
     print("0. Exit")
-    print("1. Show everything")
-    print("2. Show States")
-    print("3. Show Alphabet")
-    print("4. Show Transitions")
-    print("5. Show Initial State")
-    print("6. Show Final States")
 
 
 def run():
@@ -39,24 +40,26 @@ def run():
     done = False
     while not done:
         displayMenu()
-        print(">>")
-        command = input()
+        command = input('>>')
         match command:
             case "0":
                 done = True
                 break
             case "1":
-                print(finite_automata)
-            case "2":
                 print(finite_automata.Q)
-            case "3":
+            case "2":
                 print(finite_automata.E)
-            case "4":
+            case "3":
                 print(finite_automata.delta)
-            case "5":
+            case "4":
                 print(finite_automata.q0)
-            case "6":
+            case "5":
                 print(finite_automata.F)
+            case "6":
+                print(finite_automata.isDFA())
+            case "7":
+                sequence = input('Read sequence>>')
+                print(finite_automata.isAccepted(sequence))
             case _:
                 print("Invalid command!\n")
 
