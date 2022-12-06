@@ -52,9 +52,9 @@ class ScannerResult:
                             line_counter) + " column: " + str(position + 1) + "\n"
                     position += len(tokens[i])
 
-        with open('lab3/st.out', 'w') as writer:
+        with open('scanner/st.out', 'w') as writer:
             writer.write(str(self.ST))
-        with open('lab3/pif.out', 'w') as writer:
+        with open('scanner/pif.out', 'w') as writer:
             writer.write(str(self.PIF))
         if exceptionMessage == '':
             print("Lexically correct")
@@ -64,7 +64,7 @@ class ScannerResult:
 
 if __name__ == '__main__':
     scanner_result = ScannerResult()
-    scanner_result.compute_results("lab3/p1.txt")
-    # scanner_result.compute_results("lab3/p1err.txt")
-    # scanner_result.compute_results("lab3/p2.txt")
-    # scanner_result.compute_results("lab3/p3.txt")
+    scanner_result.compute_results("scanner/p1.txt")
+    # scanner_result.compute_results("scanner/p1err.txt")
+    # scanner_result.compute_results("scanner/p2.txt")
+    # scanner_result.compute_results("scanner/p3.txt")

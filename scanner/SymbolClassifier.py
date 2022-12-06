@@ -8,7 +8,7 @@ class SymbolClassifier:
         self.classify()
 
     def classify(self) -> None:
-        with open('lab3/Tokens.in', 'r') as f:
+        with open('scanner/Tokens.in', 'r') as f:
             f.readline()
             for i in range(7):
                 separator = f.readline().strip()

@@ -1,4 +1,4 @@
-from lab4.FiniteAutomata import FiniteAutomata
+from finite_automata.FiniteAutomata import FiniteAutomata
 
 
 def read(file_name):
